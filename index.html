@@ -1,0 +1,30 @@
+<html>
+<script src="phaser.js"></script>
+<script src="SplashScene.js"></script>
+<script src="GamePlayScene.js"></script>
+<script src="PlayerSelectionScene.js"></script>
+ <script>
+    var config = {
+        backgroundColor: '#FFFFFF',
+        type: Phaser.AUTO,
+
+        width: window.outerWidth,
+        height: 800,
+        physics: {
+            default: 'arcade',
+            arcade: {
+                gravity: { y: 200 }
+            }
+        },
+        scene:[PlayerSelectionScene,GamePlayScene,SplashScene],
+
+        
+    };
+    var game = new Phaser.Game(config);
+    //Assign Additional values to the Global Game Object
+    game.config = Object.assign({maxCharactersPerRow:3,maxPlayers:2},game.config);
+    
+   
+</script>
+
+</html>
